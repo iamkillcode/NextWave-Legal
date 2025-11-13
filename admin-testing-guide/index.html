@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NextWave - Play Store Admin Testing Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #0D1117 0%, #1A1F2E 100%);
+            color: #E6EDF3;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: rgba(22, 27, 34, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #00D9FF 0%, #0099CC 100%);
+            padding: 40px 30px;
+            text-align: center;
+            color: #000;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        .content {
+            padding: 30px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section h2 {
+            color: #00D9FF;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(0, 217, 255, 0.3);
+        }
+
+        .section h3 {
+            color: #58A6FF;
+            font-size: 1.4em;
+            margin-top: 25px;
+            margin-bottom: 12px;
+        }
+
+        .section h4 {
+            color: #79C0FF;
+            font-size: 1.1em;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .credentials {
+            background: rgba(0, 217, 255, 0.1);
+            border: 2px solid #00D9FF;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .credentials strong {
+            color: #00D9FF;
+            font-size: 1.1em;
+        }
+
+        .credentials code {
+            background: rgba(0, 0, 0, 0.4);
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            color: #00D9FF;
+            font-weight: bold;
+        }
+
+        .warning {
+            background: rgba(255, 193, 7, 0.1);
+            border-left: 4px solid #FFC107;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+
+        .warning strong {
+            color: #FFC107;
+        }
+
+        .step-list {
+            counter-reset: step-counter;
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .step-list li {
+            counter-increment: step-counter;
+            margin-bottom: 15px;
+            padding-left: 40px;
+            position: relative;
+        }
+
+        .step-list li::before {
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: #00D9FF;
+            color: #000;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            border-color: #00D9FF;
+            transform: translateY(-2px);
+        }
+
+        .feature-card h4 {
+            color: #00D9FF;
+            margin-top: 0;
+            font-size: 1em;
+        }
+
+        .checklist {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .checklist li {
+            padding: 10px;
+            padding-left: 35px;
+            position: relative;
+            background: rgba(255, 255, 255, 0.03);
+            margin-bottom: 8px;
+            border-radius: 6px;
+            border-left: 3px solid #00D9FF;
+        }
+
+        .checklist li::before {
+            content: '☐';
+            position: absolute;
+            left: 10px;
+            color: #00D9FF;
+            font-size: 1.2em;
+        }
+
+        .tag {
+            display: inline-block;
+            background: rgba(0, 217, 255, 0.2);
+            color: #00D9FF;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.85em;
+            font-weight: 600;
+            margin-right: 8px;
+            margin-bottom: 8px;
+        }
+
+        .scenario {
+            background: rgba(138, 43, 226, 0.1);
+            border: 1px solid rgba(138, 43, 226, 0.3);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .scenario h4 {
+            color: #BA55D3;
+            margin-top: 0;
+        }
+
+        code {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            color: #79C0FF;
+        }
+
+        pre {
+            background: rgba(0, 0, 0, 0.4);
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .contact-info {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .contact-info p {
+            margin: 8px 0;
+        }
+
+        a {
+            color: #58A6FF;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2em;
+            }
+
+            .content {
+                padding: 20px;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎮 NextWave Music Sim</h1>
+            <p>Play Store Admin Functions Testing Guide</p>
+        </div>
+
+        <div class="content">
+            <!-- Overview -->
+            <div class="section">
+                <h2>📋 Overview</h2>
+                <p>This guide is for Play Store reviewers who need to test the admin functions of NextWave Music Sim. Admin functions are restricted features used by moderators to manage the game community, handle player support, and monitor game health.</p>
+            </div>
+
+            <!-- Admin Credentials -->
+            <div class="section">
+                <h2>🔑 Admin Test Credentials</h2>
+                <div class="credentials">
+                    <p><strong>Email:</strong> <code>playstore.admin@nextwavemusic.com</code></p>
+                    <p><strong>Password:</strong> <code>PlayStore2025</code></p>
+                </div>
+                <div class="warning">
+                    <strong>⚠️ Note:</strong> This account has full admin privileges. It is created specifically for Play Store review and will be deactivated after approval.
+                </div>
+            </div>
+
+            <!-- Accessing Admin Dashboard -->
+            <div class="section">
+                <h2>🚀 Accessing the Admin Dashboard</h2>
+                <h3>Step 1: Login with Admin Account</h3>
+                <ol class="step-list">
+                    <li>Open NextWave Music Sim</li>
+                    <li>On the login screen, enter:<br>
+                        Email: <code>playstore.admin@nextwavemusic.com</code><br>
+                        Password: <code>PlayStore2025</code>
+                    </li>
+                    <li>Click "Sign In"</li>
+                </ol>
+
+                <h3>Step 2: Open Admin Dashboard</h3>
+                <ol class="step-list">
+                    <li>After login, you'll see the main game dashboard</li>
+                    <li>Look for the <strong>Settings</strong> icon (⚙️) in the bottom navigation bar</li>
+                    <li>Tap Settings</li>
+                    <li>Scroll down to the bottom of settings</li>
+                    <li>If you're logged in as an admin, you'll see an <strong>"Admin Dashboard"</strong> button</li>
+                    <li>Tap "Admin Dashboard" to access admin features</li>
+                </ol>
+            </div>
+
+            <!-- Admin Dashboard Features -->
+            <div class="section">
+                <h2>🛠️ Admin Dashboard Features</h2>
+                <p>The Admin Dashboard has 6 main tabs:</p>
+
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h4>📊 Overview Tab</h4>
+                        <p>View game statistics, active players, total songs/albums, and daily/weekly metrics.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>🛠️ Operations Tab</h4>
+                        <p>Manage access codes, run migrations, handle player support actions.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>👥 Players Tab</h4>
+                        <p>Search players, view profiles, gift items, manage bans.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>🎁 Promos Tab</h4>
+                        <p>Create promotions, schedule events, send announcements.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>📋 Logs Tab</h4>
+                        <p>Monitor errors, crashes, system events, and player reports.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>📈 Reports Tab</h4>
+                        <p>View analytics, retention metrics, and performance data.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Access Code Management -->
+            <div class="section">
+                <h2>🔐 Access Code Management</h2>
+                <h3>Testing Access Codes</h3>
+                <ol class="step-list">
+                    <li>Go to Admin Dashboard → Operations Tab</li>
+                    <li>Find "Access Code Management" section at the top</li>
+                    <li>Click "Generate Codes"</li>
+                    <li>Enter quantity (e.g., 5) and optional prefix (e.g., "REVIEW")</li>
+                    <li>Set optional expiration date or max uses</li>
+                    <li>Click "Generate" - codes will be created</li>
+                    <li>Copy generated codes (use "Copy All" button)</li>
+                    <li>Click "View All" to see all existing codes</li>
+                    <li>Click the copy icon next to any code to copy it</li>
+                    <li>Click the revoke icon (🚫) to deactivate a code</li>
+                </ol>
+
+                <h3>Verifying Access Codes Work</h3>
+                <ol class="step-list">
+                    <li>Generate a test access code</li>
+                    <li>Logout from admin account</li>
+                    <li>On the login screen, click "Create Account"</li>
+                    <li>Enter the access code when prompted</li>
+                    <li>Complete registration</li>
+                    <li>Verify account was created successfully</li>
+                </ol>
+            </div>
+
+            <!-- Player Management -->
+            <div class="section">
+                <h2>👥 Player Management</h2>
+                <h3>Finding Players</h3>
+                <p>Players can be found by their User ID displayed in Settings:</p>
+                <ol class="step-list">
+                    <li>Login as test player (<code>playstore.test@nextwavemusic.com</code>)</li>
+                    <li>Go to Settings</li>
+                    <li>Copy the User ID shown below email address</li>
+                    <li>Logout and login as admin</li>
+                    <li>Go to Admin Dashboard → Players Tab</li>
+                    <li>Search using the copied User ID or email</li>
+                </ol>
+
+                <h3>Gifting Items to Players</h3>
+                <ol class="step-list">
+                    <li>Search for player using Players tab</li>
+                    <li>Click "Gift Items" button</li>
+                    <li>Select gift type (Money, Fame, Energy, etc.)</li>
+                    <li>Enter amount (e.g., 10000)</li>
+                    <li>Add optional message</li>
+                    <li>Click "Send Gift"</li>
+                    <li>Login as test player to verify gift received</li>
+                </ol>
+            </div>
+
+            <!-- Common Use Cases -->
+            <div class="section">
+                <h2>💼 Common Admin Use Cases</h2>
+
+                <div class="scenario">
+                    <h4>Use Case 1: Helping a Player</h4>
+                    <p><strong>Scenario:</strong> Player reports lost progress</p>
+                    <ol class="step-list">
+                        <li>Go to Players tab</li>
+                        <li>Search for player by email</li>
+                        <li>View their current stats</li>
+                        <li>Use "Gift Items" to compensate</li>
+                        <li>Check Logs tab for errors</li>
+                    </ol>
+                </div>
+
+                <div class="scenario">
+                    <h4>Use Case 2: Moderating Content</h4>
+                    <p><strong>Scenario:</strong> Inappropriate artist name reported</p>
+                    <ol class="step-list">
+                        <li>Search for offending player</li>
+                        <li>Review their profile</li>
+                        <li>Use "Ban User" with reason</li>
+                        <li>Set ban duration</li>
+                        <li>Log action in Reports tab</li>
+                    </ol>
+                </div>
+
+                <div class="scenario">
+                    <h4>Use Case 3: Beta Testing</h4>
+                    <p><strong>Scenario:</strong> Distribute codes to beta testers</p>
+                    <ol class="step-list">
+                        <li>Generate access codes with "BETA" prefix</li>
+                        <li>Set expiration date (e.g., 30 days)</li>
+                        <li>Copy all codes</li>
+                        <li>Share with testers</li>
+                        <li>Monitor usage in View All codes</li>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- Security Features -->
+            <div class="section">
+                <h2>🔒 Admin Security Features</h2>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h4>Permission Checks</h4>
+                        <p>Every action verifies <code>isAdmin: true</code> in Firestore. Server-side validation enforced.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Audit Logging</h4>
+                        <p>All admin actions logged with user ID, action type, timestamp, and target.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Rate Limiting</h4>
+                        <p>Gift items: 10/min, Ban actions: 5/min, Bulk ops: 1/5min</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Hidden UI</h4>
+                        <p>Admin dashboard only visible to verified admin users in Firestore.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testing Checklist -->
+            <div class="section">
+                <h2>✅ Testing Checklist</h2>
+                <ul class="checklist">
+                    <li>Successfully login with admin credentials</li>
+                    <li>Access Admin Dashboard from settings</li>
+                    <li>View Overview tab statistics</li>
+                    <li>Generate at least 3 access codes</li>
+                    <li>View all access codes list</li>
+                    <li>Copy an access code</li>
+                    <li>Revoke an access code</li>
+                    <li>Search for a test player</li>
+                    <li>Gift items to test player</li>
+                    <li>View player profile details</li>
+                    <li>Check error logs in Logs tab</li>
+                    <li>Logout and verify admin dashboard hidden for regular players</li>
+                </ul>
+            </div>
+
+            <!-- Why Admin Functions Exist -->
+            <div class="section">
+                <h2>📝 Why Admin Functions Exist</h2>
+                <p>NextWave Music Sim is a <strong>multiplayer social simulation game</strong> with user-generated content (artist names, song titles, bios). Admin functions are necessary for:</p>
+                <ol>
+                    <li><strong>Content Moderation:</strong> Handle inappropriate names, offensive content</li>
+                    <li><strong>Player Support:</strong> Help users with technical issues, lost progress</li>
+                    <li><strong>Community Management:</strong> Ban cheaters, spammers, toxic users</li>
+                    <li><strong>Game Balance:</strong> Adjust promotions, fix economy issues</li>
+                    <li><strong>GDPR Compliance:</strong> Handle data deletion requests from EU users</li>
+                    <li><strong>Beta Testing:</strong> Control access during closed beta via access codes</li>
+                </ol>
+            </div>
+
+            <!-- Data Privacy -->
+            <div class="section">
+                <h2>🔐 Data Privacy Compliance</h2>
+                <ul>
+                    <li>Admin can view player data only for support/moderation purposes</li>
+                    <li>Admin actions are logged for transparency</li>
+                    <li>Players can export their data anytime (Settings → Privacy → Export My Data)</li>
+                    <li>Players can delete their account (Settings → Privacy → Delete Account)</li>
+                    <li>Account deletion URL: <a href="https://iamkillcode.github.io/NextWave-Legal/data-deletion-site/" target="_blank">https://iamkillcode.github.io/NextWave-Legal/data-deletion-site/</a></li>
+                </ul>
+            </div>
+
+            <!-- Troubleshooting -->
+            <div class="section">
+                <h2>🔧 Troubleshooting</h2>
+                <h3>Admin Dashboard Button Not Showing</h3>
+                <p><strong>Cause:</strong> Account doesn't have admin privileges<br>
+                <strong>Solution:</strong> Ensure you're logged in with <code>playstore.admin@nextwavemusic.com</code></p>
+
+                <h3>"Access Denied" Error</h3>
+                <p><strong>Cause:</strong> Admin record missing from Firestore<br>
+                <strong>Solution:</strong> Admin account needs to be manually added to <code>admins</code> collection</p>
+
+                <h3>Player Search Returns No Results</h3>
+                <p><strong>Cause:</strong> Player doesn't exist or incorrect search term<br>
+                <strong>Solution:</strong> Use exact email or User ID from Settings screen</p>
+
+                <h3>Access Code Generation Fails</h3>
+                <p><strong>Cause:</strong> Invalid parameters or permissions issue<br>
+                <strong>Solution:</strong> Check count is between 1-100, verify admin status</p>
+            </div>
+
+            <!-- Contact -->
+            <div class="section">
+                <h2>📧 Contact for Review Questions</h2>
+                <div class="contact-info">
+                    <p><strong>Developer:</strong> iamkillcode</p>
+                    <p><strong>Support Email:</strong> manueloppong14@gmail.com</p>
+                    <p><strong>Discord:</strong> NextWave Community Server (link in app)</p>
+                    <p><strong>Review Timeline:</strong> Please allow 24-48 hours for responses during the review process.</p>
+                </div>
+            </div>
+
+            <!-- Additional Scenarios -->
+            <div class="section">
+                <h2>🎯 Additional Test Scenarios</h2>
+
+                <div class="scenario">
+                    <h4>Scenario A: Access Code Workflow</h4>
+                    <ol class="step-list">
+                        <li>Login as admin</li>
+                        <li>Generate 3 codes with prefix "REVIEW"</li>
+                        <li>Copy one code</li>
+                        <li>Logout</li>
+                        <li>Create new account with copied code</li>
+                        <li>Verify code works and account created</li>
+                        <li>Login as admin again</li>
+                        <li>View codes - verify used count increased</li>
+                        <li>Revoke remaining codes</li>
+                        <li>Try to use revoked code - verify rejection</li>
+                    </ol>
+                </div>
+
+                <div class="scenario">
+                    <h4>Scenario B: Player Recovery</h4>
+                    <ol class="step-list">
+                        <li>Login as admin</li>
+                        <li>Go to Players tab</li>
+                        <li>Search for <code>playstore.test@nextwavemusic.com</code></li>
+                        <li>Note current money amount</li>
+                        <li>Gift $50,000 with message "Test compensation"</li>
+                        <li>Logout</li>
+                        <li>Login as <code>playstore.test@nextwavemusic.com</code></li>
+                        <li>Verify money increased by $50,000</li>
+                    </ol>
+                </div>
+
+                <div class="scenario">
+                    <h4>Scenario C: User ID Display</h4>
+                    <ol class="step-list">
+                        <li>Login as any test account</li>
+                        <li>Go to Settings screen</li>
+                        <li>Verify User ID is displayed below email</li>
+                        <li>Click copy icon next to User ID</li>
+                        <li>Verify "User ID copied" toast appears</li>
+                        <li>Use copied ID in admin search</li>
+                    </ol>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>
