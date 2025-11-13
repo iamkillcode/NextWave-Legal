@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Privacy Policy for NextWave Music Sim - A multiplayer music artist life simulation game">
+    <meta name="keywords" content="NextWave, Music Sim, Privacy Policy, GDPR, CCPA">
+    <title>Privacy Policy - NextWave Music Sim</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #6366f1;
+            --secondary-color: #8b5cf6;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --bg-light: #f9fafb;
+            --bg-white: #ffffff;
+            --border-color: #e5e7eb;
+            --success-color: #10b981;
+            --accent-gradient: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.7;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+        }
+
+        /* Header */
+        header {
+            background: var(--accent-gradient);
+            color: white;
+            padding: 2rem 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            opacity: 0.95;
+        }
+
+        .last-updated {
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 8px;
+            display: inline-block;
+            font-weight: 500;
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--bg-white);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            gap: 1.5rem;
+            overflow-x: auto;
+        }
+
+        .nav-link {
+            color: var(--text-light);
+            text-decoration: none;
+            white-space: nowrap;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            transition: all 0.2s;
+            font-weight: 500;
+        }
+
+        .nav-link:hover {
+            background: var(--bg-light);
+            color: var(--primary-color);
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+
+        .content-wrapper {
+            background: var(--bg-white);
+            border-radius: 12px;
+            padding: 3rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Typography */
+        h2 {
+            font-size: 2rem;
+            color: var(--text-dark);
+            margin-top: 3rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid var(--primary-color);
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            color: var(--text-dark);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        h4 {
+            font-size: 1.2rem;
+            color: var(--text-dark);
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            color: var(--text-light);
+        }
+
+        /* Lists */
+        ul, ol {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+            color: var(--text-light);
+        }
+
+        strong {
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        /* Info Boxes */
+        .info-box {
+            background: var(--bg-light);
+            border-left: 4px solid var(--primary-color);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 6px;
+        }
+
+        .developer-info {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+            border-left: 4px solid var(--secondary-color);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+
+        .developer-info p {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Highlight Boxes */
+        .highlight {
+            background: #fef3c7;
+            border-left: 4px solid #f59e0b;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 6px;
+        }
+
+        .success-box {
+            background: #d1fae5;
+            border-left: 4px solid var(--success-color);
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 6px;
+        }
+
+        /* Summary Section */
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .summary-card {
+            background: var(--bg-light);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .summary-card h4 {
+            margin-top: 0;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .summary-card ul {
+            margin-left: 1.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-dark);
+            color: white;
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.2s;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .content-wrapper {
+                padding: 1.5rem;
+            }
+
+            .nav-content {
+                padding: 0.75rem 1rem;
+            }
+
+            .summary-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            nav, footer {
+                display: none;
+            }
+
+            .content-wrapper {
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>🎵 NextWave Music Sim</h1>
+            <p class="subtitle">Privacy Policy</p>
+            <div class="last-updated">Last Updated: November 12, 2025</div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="nav-content">
+            <a href="#introduction" class="nav-link">Introduction</a>
+            <a href="#information-we-collect" class="nav-link">What We Collect</a>
+            <a href="#how-we-use" class="nav-link">How We Use It</a>
+            <a href="#sharing" class="nav-link">Data Sharing</a>
+            <a href="#security" class="nav-link">Security</a>
+            <a href="#your-rights" class="nav-link">Your Rights</a>
+            <a href="#contact" class="nav-link">Contact</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="content-wrapper">
+            <section id="introduction">
+                <h2>Introduction</h2>
+                <p>Welcome to NextWave Music Sim ("we," "our," or "the Game"). We are committed to protecting your privacy and ensuring transparency about how we collect, use, and safeguard your information. This Privacy Policy explains our practices regarding data collection and usage when you play NextWave Music Sim.</p>
+                <p>By using NextWave Music Sim, you agree to the collection and use of information in accordance with this Privacy Policy.</p>
+
+                <div class="developer-info">
+                    <h4>Developer Information</h4>
+                    <p><strong>Developer:</strong> iamkillcode</p>
+                    <p><strong>Contact Email:</strong> <a href="mailto:manueloppong14@gmail.com">manueloppong14@gmail.com</a></p>
+                    <p><strong>GitHub:</strong> <a href="https://github.com/iamkillcode/NextWave-Music-Sim" target="_blank">github.com/iamkillcode/NextWave-Music-Sim</a></p>
+                    <p><strong>App Type:</strong> Multiplayer Music Artist Life Simulation Game</p>
+                </div>
+            </section>
+
+            <section id="information-we-collect">
+                <h2>1. Information We Collect</h2>
+
+                <h3>1.1 Account Information</h3>
+                <p>When you create an account or sign in, we collect:</p>
+                <ul>
+                    <li><strong>Google Account Information</strong> (if using Google Sign-In): Email address, display name, and profile picture</li>
+                    <li><strong>User ID:</strong> A unique identifier automatically generated by Firebase Authentication</li>
+                    <li><strong>Display Name:</strong> The artist name you choose for your in-game profile</li>
+                </ul>
+
+                <h3>1.2 Game Profile Data</h3>
+                <p>To provide the game experience, we store:</p>
+                <ul>
+                    <li><strong>Artist Statistics:</strong> Fame, money, energy, creativity, fanbase, loyal fanbase, skills (songwriting, lyrics, composition, experience, inspiration)</li>
+                    <li><strong>Career Information:</strong> Career start date, age, primary music genre, genre mastery levels (0-100%), unlocked genres</li>
+                    <li><strong>Verification Status:</strong> Whether you've applied for or received verified artist status</li>
+                    <li><strong>Location Data:</strong> Your in-game current region (e.g., USA, Europe, Asia, Africa, Latin America, Middle East, India, Oceania, Canada) - <em>this is fictional game data, not real GPS location</em></li>
+                </ul>
+
+                <h3>1.3 Game Content You Create</h3>
+                <p>We store content you create within the game:</p>
+                <ul>
+                    <li><strong>Songs:</strong> Titles, genres, quality ratings, custom lyrics, release dates, streaming statistics, cover art, diss tracks, featured artists</li>
+                    <li><strong>Albums/EPs:</strong> Album information, track listings, sales data, certifications (Gold, Platinum, Diamond)</li>
+                    <li><strong>Social Media Posts:</strong> Posts you create on in-game EchoX social platform</li>
+                    <li><strong>NexTube Videos:</strong> Music videos and content uploaded to in-game NexTube platform</li>
+                    <li><strong>Chat Messages:</strong> Direct messages and conversations with other players via StarChat</li>
+                    <li><strong>Comments:</strong> Comments on songs, videos, and social posts</li>
+                    <li><strong>Avatar Customization:</strong> Your selected skin tone, hairstyle, facial features, clothing, and accessories</li>
+                    <li><strong>Bio/Profile:</strong> Biographical information you add to your artist profile</li>
+                </ul>
+
+                <h3>1.4 Gameplay Activity</h3>
+                <p>To manage game progression and multiplayer features, we track:</p>
+                <ul>
+                    <li><strong>Financial Transactions:</strong> In-game currency earned and spent (not real money), bank investments, loans</li>
+                    <li><strong>Tours and Concerts:</strong> Performance history, tour schedules, venue bookings, ticket sales</li>
+                    <li><strong>Collaborations:</strong> Partnerships with other players on songs and albums, royalty splits</li>
+                    <li><strong>Relationships:</strong> In-game friendships, romances, and rivalries with other players or NPCs</li>
+                    <li><strong>Beefs:</strong> Public feuds or rivalries initiated within the game</li>
+                    <li><strong>Side Hustles & Gigs:</strong> Part-time jobs (barista, rideshare, retail) and gig performances with rarity tiers</li>
+                    <li><strong>Crew Membership:</strong> Participation in player-created music crews, crew songs, crew challenges</li>
+                    <li><strong>Achievements:</strong> Certifications, chart positions, milestones, GigFinder streaks</li>
+                    <li><strong>Last Activity Date:</strong> When you last played to manage game time progression and fame decay</li>
+                    <li><strong>Last Release Date:</strong> When you last published content to prevent spam</li>
+                </ul>
+
+                <h3>1.5 Uploaded Media</h3>
+                <p>When you upload custom content:</p>
+                <ul>
+                    <li><strong>Cover Art Images:</strong> Custom album/song cover images uploaded via our image picker</li>
+                    <li><strong>Profile Pictures:</strong> Custom avatar images (if using custom upload feature)</li>
+                    <li><strong>Crew Symbols:</strong> Custom logos for music crews</li>
+                    <li><strong>Audio Files:</strong> Music recordings, vocal tracks, instrumentals, or other audio content you upload for your songs</li>
+                </ul>
+                <p>These files are stored securely in Firebase Cloud Storage with unique identifiers and access controls. Audio files are processed and stored in compressed formats to optimize storage and streaming performance.</p>
+
+                <h3>1.6 Automatically Collected Information</h3>
+                <p>We automatically collect:</p>
+                <ul>
+                    <li><strong>Device Information:</strong> Platform type (web, Android, iOS, Windows), browser type, screen resolution</li>
+                    <li><strong>Analytics Data:</strong> Firebase Analytics collects anonymous usage patterns, screen views, feature interactions, session duration, and app crashes to improve game performance</li>
+                    <li><strong>Authentication Tokens:</strong> Session tokens to keep you logged in securely</li>
+                    <li><strong>Server Timestamps:</strong> Game time synchronization data to ensure fair multiplayer gameplay (1 real hour = 1 in-game day)</li>
+                    <li><strong>Performance Metrics:</strong> App load times, network latency, Cloud Function execution times</li>
+                </ul>
+
+                <h3>1.7 Multiplayer & Social Data</h3>
+                <p>To enable multiplayer features:</p>
+                <ul>
+                    <li><strong>EchoX Social Media:</strong> Followers, following list, posts, likes, shares</li>
+                    <li><strong>Player Directory:</strong> Public profiles visible in searchable player directory</li>
+                    <li><strong>Global Charts:</strong> Your songs' performance on Hot 100, Spotlight 200, regional charts, weekly charts</li>
+                    <li><strong>Leaderboards:</strong> Rankings for top artists, most streamed songs, crew challenges</li>
+                    <li><strong>Reports:</strong> Reports you file about inappropriate content or behavior</li>
+                    <li><strong>Admin Gifts:</strong> Monetary gifts received from administrators</li>
+                </ul>
+
+                <h3>1.8 Information We Do NOT Collect</h3>
+                <div class="success-box">
+                    <p><strong>We do not collect:</strong></p>
+                    <ul>
+                        <li>Real-world GPS location or precise device location</li>
+                        <li>Payment information (the game is free-to-play with in-game currency only)</li>
+                        <li>Personal identification documents</li>
+                        <li>Phone numbers (beyond what Google provides during sign-in)</li>
+                        <li>Contact lists from your device</li>
+                        <li>Information from other apps on your device</li>
+                        <li>Biometric data</li>
+                        <li>Health or medical information</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="how-we-use">
+                <h2>2. How We Use Your Information</h2>
+                <p>We use collected information solely for providing and improving the game experience:</p>
+
+                <h3>2.1 Core Game Functionality</h3>
+                <ul>
+                    <li>Maintain your artist profile and game progression</li>
+                    <li>Calculate streaming revenue, chart positions, and fame levels using server-authoritative Cloud Functions</li>
+                    <li>Enable multiplayer features (collaborations, chat, social media, beefs, crews)</li>
+                    <li>Synchronize game time across all players (1 real hour = 1 in-game day)</li>
+                    <li>Process in-game transactions, financial records, bank operations</li>
+                    <li>Track song lifecycle (Written → Recorded → Released)</li>
+                    <li>Manage album/EP releases and certifications</li>
+                    <li>Calculate stream growth with decay algorithms and virality scores</li>
+                </ul>
+
+                <h3>2.2 Social & Multiplayer Features</h3>
+                <ul>
+                    <li>Display your artist profile to other players in the directory</li>
+                    <li>Enable direct messaging and collaboration requests</li>
+                    <li>Show your songs on global, regional, and weekly charts</li>
+                    <li>Allow other players to follow you on EchoX social platform</li>
+                    <li>Facilitate crew membership, crew songs, and crew challenges</li>
+                    <li>Support relationship mechanics (friendships, romances, rivalries)</li>
+                    <li>Enable beef/rivalry systems with diss tracks</li>
+                    <li>Show NexTube music videos to other players</li>
+                </ul>
+
+                <h3>2.3 Game Balance & Anti-Cheat</h3>
+                <ul>
+                    <li>Detect and prevent time manipulation or cheating using server timestamps</li>
+                    <li>Monitor for spam or abuse of game systems</li>
+                    <li>Ensure fair competition on leaderboards and charts</li>
+                    <li>Track last release dates to prevent spam</li>
+                    <li>Validate client-side calculations with server-side verification</li>
+                    <li>Rate limiting on Cloud Functions to prevent exploitation</li>
+                </ul>
+
+                <h3>2.4 Analytics & Improvements</h3>
+                <ul>
+                    <li>Analyze anonymous gameplay patterns to improve features</li>
+                    <li>Monitor app performance, crash rates, and fix bugs</li>
+                    <li>Understand which features are most popular</li>
+                    <li>Optimize server performance and Firebase costs</li>
+                    <li>A/B testing of new features via Firebase Remote Config</li>
+                    <li>Telemetry for game balance adjustments</li>
+                </ul>
+
+                <h3>2.5 Administrative Functions</h3>
+                <ul>
+                    <li>Provide customer support when needed</li>
+                    <li>Respond to reports of inappropriate content or behavior</li>
+                    <li>Enable admin review of verification applications</li>
+                    <li>Send in-game notifications about game updates, events, or "The Scoop" news</li>
+                    <li>Moderate user-generated content for Terms of Service violations</li>
+                    <li>Admin gifts and player management tools</li>
+                </ul>
+            </section>
+
+            <section id="sharing">
+                <h2>3. Information Sharing & Disclosure</h2>
+
+                <h3>3.1 Shared Within the Game (Public Information)</h3>
+                <p>The following information is visible to other players in multiplayer mode:</p>
+                <ul>
+                    <li>Your artist name (display name)</li>
+                    <li>Profile picture/avatar customization</li>
+                    <li>Bio/about section</li>
+                    <li>Songs, albums, and their streaming statistics</li>
+                    <li>Chart positions and certifications</li>
+                    <li>Fame level and fanbase size (total, not regional breakdown)</li>
+                    <li>EchoX posts and NexTube videos</li>
+                    <li>Comments on public content</li>
+                    <li>Crew membership and crew songs</li>
+                    <li>Verification status (verified badge)</li>
+                    <li>Beef/rivalry participation (if public)</li>
+                </ul>
+
+                <h3>3.2 Private Information (Not Shared)</h3>
+                <p>The following remains private:</p>
+                <ul>
+                    <li>Your email address</li>
+                    <li>Direct messages (only visible to sender and recipient)</li>
+                    <li>In-game money balance (exact amount)</li>
+                    <li>Energy and creativity levels</li>
+                    <li>Exact skill levels (songwriting, lyrics, composition, experience, inspiration)</li>
+                    <li>Pending practices or skill training sessions</li>
+                    <li>Side hustle contracts and gig offers</li>
+                    <li>Relationship details (unless publicly announced via EchoX)</li>
+                    <li>Tour planning details and venue contracts</li>
+                    <li>Unpublished/unreleased songs (in "Written" or "Recorded" state)</li>
+                    <li>Bank account details, investments, and loan information</li>
+                    <li>Regional fanbase breakdown</li>
+                    <li>Loyal fanbase statistics</li>
+                    <li>Genre mastery percentages</li>
+                    <li>Unlocked genres progress</li>
+                </ul>
+
+                <h3>3.3 Third-Party Service Providers</h3>
+                <p>We use trusted third-party services to operate the game:</p>
+
+                <h4>Google Firebase (Google LLC)</h4>
+                <ul>
+                    <li><strong>Services Used:</strong> Authentication, Cloud Firestore (database), Cloud Functions (server logic), Cloud Storage (images/audio), Analytics, Remote Config, Cloud Messaging</li>
+                    <li><strong>Purpose:</strong> Core game infrastructure, real-time multiplayer, analytics, notifications</li>
+                    <li><strong>Data Shared:</strong> User ID, game data as necessary for service operation</li>
+                    <li><strong>Privacy Policy:</strong> <a href="https://firebase.google.com/support/privacy" target="_blank">firebase.google.com/support/privacy</a></li>
+                    <li><strong>Data Location:</strong> Servers in us-central1, us-east1 regions</li>
+                </ul>
+
+                <h4>Google Sign-In</h4>
+                <ul>
+                    <li><strong>Purpose:</strong> Optional authentication method for account creation</li>
+                    <li><strong>Data Collected:</strong> Email, display name, profile picture (with your explicit consent)</li>
+                    <li><strong>Privacy Policy:</strong> <a href="https://policies.google.com/privacy" target="_blank">policies.google.com/privacy</a></li>
+                </ul>
+
+                <h4>Google Gemini AI</h4>
+                <ul>
+                    <li><strong>Purpose:</strong> Generate AI-driven in-game news articles for "The Scoop" feature</li>
+                    <li><strong>Data Shared:</strong> Anonymous game events (no personal identifiers)</li>
+                    <li><strong>Privacy Policy:</strong> <a href="https://policies.google.com/privacy" target="_blank">policies.google.com/privacy</a></li>
+                </ul>
+
+                <p>These services may have access to your data as necessary to perform their functions on our behalf. They are contractually obligated not to use or disclose your information except as necessary to provide services to us.</p>
+
+                <h3>3.4 Legal Requirements</h3>
+                <p>We may disclose your information if required by law, such as:</p>
+                <ul>
+                    <li>To comply with legal obligations, subpoenas, court orders, or government requests</li>
+                    <li>To enforce our Terms of Service or investigate violations</li>
+                    <li>To protect the rights, property, or safety of our users, the public, or ourselves</li>
+                    <li>To investigate potential violations of our policies, fraud, or security issues</li>
+                    <li>In connection with prevention or mitigation of harm</li>
+                </ul>
+
+                <h3>3.5 Business Transfers</h3>
+                <p>If NextWave Music Sim is involved in a merger, acquisition, reorganization, or sale of assets, your information may be transferred as part of that transaction. We will:</p>
+                <ul>
+                    <li>Notify you via email and/or prominent notice in the game at least 30 days before transfer</li>
+                    <li>Ensure the receiving party agrees to handle your data in accordance with this Privacy Policy</li>
+                    <li>Provide you the opportunity to delete your account before the transfer</li>
+                </ul>
+
+                <h3>3.6 No Sale of Personal Data</h3>
+                <div class="success-box">
+                    <p><strong>We do not sell, rent, or trade your personal information to third parties for their marketing purposes or monetary benefit.</strong> This is a firm commitment.</p>
+                </div>
+            </section>
+
+            <section id="security">
+                <h2>4. Data Storage & Security</h2>
+
+                <h3>4.1 Where We Store Data</h3>
+                <p>Your data is stored in Firebase Cloud Firestore and Firebase Cloud Storage, which are hosted on Google Cloud Platform servers:</p>
+                <ul>
+                    <li><strong>Primary Region:</strong> us-central1 (Iowa, USA)</li>
+                    <li><strong>Secondary Region:</strong> us-east1 (South Carolina, USA)</li>
+                    <li><strong>Storage:</strong> Firebase Cloud Storage for uploaded images and audio</li>
+                </ul>
+                <p>Data may be replicated across multiple data centers for redundancy and performance.</p>
+
+                <h3>4.2 Security Measures</h3>
+                <p>We implement industry-standard security practices:</p>
+                <ul>
+                    <li><strong>Encryption in Transit:</strong> All data transmitted between your device and our servers uses HTTPS/TLS 1.2+ encryption</li>
+                    <li><strong>Encryption at Rest:</strong> Firebase Cloud Firestore and Cloud Storage encrypt all data at rest using AES-256</li>
+                    <li><strong>Authentication:</strong> Firebase Authentication with secure session tokens and token refresh mechanisms</li>
+                    <li><strong>Access Controls:</strong> Firestore security rules restrict data access based on user identity and role</li>
+                    <li><strong>Input Validation:</strong> Server-side validation and sanitization prevents injection attacks and data corruption</li>
+                    <li><strong>Rate Limiting:</strong> Cloud Functions implement rate limiting to prevent DDoS and abuse</li>
+                    <li><strong>Monitoring:</strong> Automated monitoring for suspicious activity, unusual patterns, and security breaches</li>
+                    <li><strong>Regular Audits:</strong> Periodic security audits and dependency updates</li>
+                    <li><strong>Principle of Least Privilege:</strong> Services only have access to data they need</li>
+                </ul>
+
+                <h3>4.3 Data Retention</h3>
+                <p>We retain your data as follows:</p>
+                <ul>
+                    <li><strong>Active Accounts:</strong> Data is retained indefinitely as long as you use the game</li>
+                    <li><strong>Inactive Accounts:</strong> Accounts inactive for 365+ days may be flagged for review; we'll attempt to notify you before deletion</li>
+                    <li><strong>Deleted Accounts:</strong> Upon account deletion request, all personal data is permanently deleted within 30 days</li>
+                    <li><strong>Legal Retention:</strong> Some data may be retained longer if required by law or for legitimate business purposes (e.g., fraud investigation)</li>
+                    <li><strong>Backups:</strong> Deleted data is removed from backups within 90 days</li>
+                </ul>
+
+                <h3>4.4 Your Responsibility</h3>
+                <p>To help protect your account:</p>
+                <ul>
+                    <li>Keep your Google account credentials secure</li>
+                    <li>Log out from shared devices</li>
+                    <li>Report suspicious activity to us immediately</li>
+                    <li>Do not share your account with others</li>
+                </ul>
+            </section>
+
+            <section id="your-rights">
+                <h2>5. Your Rights & Choices</h2>
+
+                <h3>5.1 Access & Correction</h3>
+                <p>You have the right to:</p>
+                <ul>
+                    <li><strong>Access</strong> your personal information stored in the game at any time</li>
+                    <li><strong>Correct</strong> inaccurate or incomplete information through in-game Settings</li>
+                    <li><strong>View</strong> your game statistics, songs, albums, and profile details</li>
+                    <li><strong>Export</strong> your data by contacting us (data portability)</li>
+                </ul>
+                <p>You can access most of your data directly in the game through:</p>
+                <ul>
+                    <li>Settings → Profile</li>
+                    <li>Music Hub → View your songs and albums</li>
+                    <li>Stats screens showing your gameplay metrics</li>
+                </ul>
+
+                <h3>5.2 Data Portability</h3>
+                <p>You may request a copy of your data in a structured, machine-readable format (JSON) by contacting us at <a href="mailto:manueloppong14@gmail.com">manueloppong14@gmail.com</a>. We will provide this within 30 days.</p>
+
+                <h3>5.3 Deletion Rights</h3>
+                <p>You can:</p>
+                <ul>
+                    <li><strong>Delete individual content:</strong> Songs, albums, EchoX posts, NexTube videos through the game interface</li>
+                    <li><strong>Request account deletion:</strong> Contact <a href="mailto:manueloppong14@gmail.com">manueloppong14@gmail.com</a></li>
+                    <li><strong>Automatic deletion:</strong> We'll permanently delete all your data within 30 days of account deletion request</li>
+                </ul>
+                <p><em>Note: Some data may be retained in anonymized form for analytics or as required by law.</em></p>
+
+                <h3>5.4 Privacy Controls</h3>
+                <p>You can control your privacy by:</p>
+                <ul>
+                    <li>Choosing what information to include in your bio</li>
+                    <li>Deciding whether to upload custom cover art or avatars</li>
+                    <li>Controlling who can send you collaboration requests (coming soon)</li>
+                    <li>Blocking users who send inappropriate messages</li>
+                    <li>Reporting inappropriate content or behavior</li>
+                    <li>Managing notification preferences</li>
+                    <li>Opting out of analytics (in Settings)</li>
+                </ul>
+
+                <h3>5.5 Communication Preferences</h3>
+                <p>You can manage notifications through:</p>
+                <ul>
+                    <li><strong>In-Game Settings:</strong> Control which in-game events trigger notifications</li>
+                    <li><strong>Device Settings:</strong> Disable push notifications entirely in your device OS</li>
+                    <li><strong>Email Communications:</strong> Unsubscribe from emails if we implement email features in the future</li>
+                </ul>
+
+                <h3>5.6 Withdrawal of Consent</h3>
+                <p>If you've signed in with Google, you can:</p>
+                <ul>
+                    <li><strong>Revoke access</strong> through your Google Account settings at <a href="https://myaccount.google.com/permissions" target="_blank">myaccount.google.com/permissions</a></li>
+                    <li><strong>Note:</strong> Revoking access will prevent you from logging into the game; you may need to delete your game account separately</li>
+                </ul>
+            </section>
+
+            <section id="childrens-privacy">
+                <h2>6. Children's Privacy</h2>
+                <div class="highlight">
+                    <p><strong>NextWave Music Sim is not directed to children under the age of 13.</strong> We do not knowingly collect personal information from children under 13.</p>
+                </div>
+                <p><strong>If you are under 13:</strong> You must not create an account or use NextWave Music Sim.</p>
+                <p><strong>If you are a parent or guardian</strong> and believe your child under 13 has provided us with personal information, please contact us immediately at <a href="mailto:manueloppong14@gmail.com">manueloppong14@gmail.com</a>, and we will:</p>
+                <ul>
+                    <li>Delete such information from our systems within 48 hours</li>
+                    <li>Terminate the child's account</li>
+                    <li>Provide confirmation of deletion</li>
+                </ul>
+                <p><strong>Age of Digital Consent:</strong> In some jurisdictions (e.g., EU), the age of digital consent may be between 13-16. If you are under the age of digital consent in your jurisdiction, you must have your parent or guardian's permission to use NextWave Music Sim.</p>
+            </section>
+
+            <section id="regional-rights">
+                <h2>7. Regional Privacy Rights</h2>
+
+                <h3>7.1 European Union (GDPR)</h3>
+                <p>If you are a resident of the European Economic Area (EEA), you have additional rights under the <strong>General Data Protection Regulation (GDPR)</strong>:</p>
+                <ul>
+                    <li><strong>Right to Access:</strong> Request copies of your personal data</li>
+                    <li><strong>Right to Rectification:</strong> Correct inaccurate or incomplete personal data</li>
+                    <li><strong>Right to Erasure:</strong> Request deletion of your data ("right to be forgotten")</li>
+                    <li><strong>Right to Restrict Processing:</strong> Limit how we use your data in certain circumstances</li>
+                    <li><strong>Right to Data Portability:</strong> Receive your data in a portable, machine-readable format</li>
+                    <li><strong>Right to Object:</strong> Object to processing based on legitimate interests</li>
+                    <li><strong>Right to Withdraw Consent:</strong> Withdraw consent at any time</li>
+                    <li><strong>Right to Lodge a Complaint:</strong> File a complaint with your local data protection authority</li>
+                </ul>
+                <p><strong>Data Protection Officer:</strong> For GDPR-related inquiries, contact <a href="mailto:manueloppong14@gmail.com">manueloppong14@gmail.com</a></p>
+
+                <h3>7.2 California (CCPA/CPRA)</h3>
+                <p>If you are a California resident, you have rights under the <strong>California Consumer Privacy Act (CCPA)</strong>:</p>
+                <ul>
+                    <li><strong>Right to Know:</strong> Request information about data collected</li>
+                    <li><strong>Right to Delete:</strong> Request deletion of your personal information</li>
+                    <li><strong>Right to Correct:</strong> Request correction of inaccurate personal information</li>
+                    <li><strong>Right to Opt-Out:</strong> We do not sell or share personal information</li>
+                    <li><strong>Right to Non-Discrimination:</strong> Equal service regardless of exercising rights</li>
+                </ul>
+                <p><strong>To Exercise Your Rights:</strong> Email <a href="mailto:manueloppong14@gmail.com">manueloppong14@gmail.com</a> with subject "CCPA Request"</p>
+
+                <h3>7.3 Other Jurisdictions</h3>
+                <p>We comply with applicable data protection laws in all jurisdictions, including:</p>
+                <ul>
+                    <li><strong>UK GDPR:</strong> Similar rights to EU GDPR</li>
+                    <li><strong>Brazil LGPD:</strong> Data protection rights for Brazilian residents</li>
+                    <li><strong>Canada PIPEDA:</strong> Privacy rights for Canadian residents</li>
+                    <li><strong>Australia Privacy Act:</strong> Rights for Australian residents</li>
+                </ul>
+            </section>
+
+            <section id="contact">
+                <h2>8. Contact Us</h2>
+                <p>If you have questions, concerns, or requests regarding this Privacy Policy or our data practices, please contact us:</p>
+
+                <div class="info-box">
+                    <h4>General Inquiries</h4>
+                    <p><strong>Email:</strong> <a href="mailto:manueloppong14@gmail.com">manueloppong14@gmail.com</a></p>
+                    <p><strong>GitHub Issues:</strong> <a href="https://github.com/iamkillcode/NextWave-Music-Sim/issues" target="_blank">github.com/iamkillcode/NextWave-Music-Sim/issues</a></p>
+                    <p><strong>In-Game:</strong> Use Settings → Contact Support option</p>
+                </div>
+
+                <div class="info-box">
+                    <h4>Privacy-Specific Inquiries</h4>
+                    <p><strong>Data Protection Officer:</strong> <a href="mailto:manueloppong14@gmail.com">manueloppong14@gmail.com</a></p>
+                    <p><strong>GDPR Requests:</strong> <a href="mailto:manueloppong14@gmail.com">manueloppong14@gmail.com</a></p>
+                    <p><strong>CCPA Requests:</strong> <a href="mailto:manueloppong14@gmail.com">manueloppong14@gmail.com</a></p>
+                </div>
+
+                <div class="info-box">
+                    <h4>Response Time</h4>
+                    <ul>
+                        <li>General inquiries: Within 48 hours</li>
+                        <li>Data access/deletion requests: Within 30 days</li>
+                        <li>GDPR/CCPA requests: Within time limits required by law (30-45 days)</li>
+                    </ul>
+                </div>
+
+                <div class="info-box">
+                    <h4>Mailing Address</h4>
+                    <p><strong>iamkillcode</strong><br>
+                    P O Box 253<br>
+                    Obuasi-Municipal, AR<br>
+                    Ghana</p>
+                </div>
+            </section>
+
+            <section id="summary">
+                <h2>Summary of Key Points</h2>
+                
+                <div class="summary-grid">
+                    <div class="summary-card">
+                        <h4>📋 What We Collect</h4>
+                        <ul>
+                            <li>Account info (email, name)</li>
+                            <li>Game progress & stats</li>
+                            <li>User content (songs, posts)</li>
+                            <li>Device & usage data</li>
+                            <li>Uploaded media (images, audio)</li>
+                        </ul>
+                    </div>
+
+                    <div class="summary-card">
+                        <h4>🎮 How We Use It</h4>
+                        <ul>
+                            <li>Provide game functionality</li>
+                            <li>Enable multiplayer features</li>
+                            <li>Calculate streams & royalties</li>
+                            <li>Improve game balance</li>
+                            <li>Prevent cheating</li>
+                        </ul>
+                    </div>
+
+                    <div class="summary-card">
+                        <h4>🔒 Security & Storage</h4>
+                        <ul>
+                            <li>Encrypted connections (HTTPS/TLS)</li>
+                            <li>Encrypted storage (AES-256)</li>
+                            <li>Firebase/Google Cloud</li>
+                            <li>US data centers</li>
+                            <li>Regular security audits</li>
+                        </ul>
+                    </div>
+
+                    <div class="summary-card">
+                        <h4>👤 Your Rights</h4>
+                        <ul>
+                            <li>Access your data anytime</li>
+                            <li>Correct inaccurate info</li>
+                            <li>Delete your account</li>
+                            <li>Export your data (JSON)</li>
+                            <li>Opt-out of analytics</li>
+                        </ul>
+                    </div>
+
+                    <div class="summary-card">
+                        <h4>✅ We Do NOT</h4>
+                        <ul>
+                            <li>Sell your data</li>
+                            <li>Share without consent</li>
+                            <li>Collect from children under 13</li>
+                            <li>Track real GPS location</li>
+                            <li>Access other apps</li>
+                        </ul>
+                    </div>
+
+                    <div class="summary-card">
+                        <h4>🌍 Public vs Private</h4>
+                        <ul>
+                            <li><strong>Public:</strong> Artist name, songs, charts</li>
+                            <li><strong>Private:</strong> Email, money balance, DMs</li>
+                            <li>You control what to share</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="success-box" style="margin-top: 2rem;">
+                    <p><strong>By using NextWave Music Sim, you acknowledge that you have read and understood this Privacy Policy and agree to its terms.</strong></p>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="https://github.com/iamkillcode/NextWave-Music-Sim" target="_blank">GitHub</a>
+                <a href="https://github.com/iamkillcode/NextWave-Music-Sim/blob/main/PRIVACY_POLICY.md" target="_blank">Markdown Version</a>
+                <a href="mailto:manueloppong14@gmail.com">Contact</a>
+            </div>
+            <p style="opacity: 0.8; margin-top: 1rem;">
+                &copy; 2025 NextWave Music Sim | Building the future of music simulation gaming while respecting your privacy.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Highlight active navigation link on scroll
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.style.background = '';
+                link.style.color = '';
+                if (link.getAttribute('href').slice(1) === current) {
+                    link.style.background = 'var(--bg-light)';
+                    link.style.color = 'var(--primary-color)';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
