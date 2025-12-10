@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Player Rules & Guidelines for NextWave Music Sim - A multiplayer music artist life simulation game">
+    <meta name="keywords" content="NextWave, Music Sim, Player Rules, Guidelines, Fair Play">
+    <title>Player Rules - NextWave Music Sim</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #6366f1;
+            --secondary-color: #8b5cf6;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --bg-light: #f9fafb;
+            --bg-white: #ffffff;
+            --border-color: #e5e7eb;
+            --success-color: #10b981;
+            --danger-color: #ef4444;
+            --warning-color: #f59e0b;
+            --accent-gradient: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.7;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+        }
+
+        /* Header */
+        header {
+            background: var(--accent-gradient);
+            color: white;
+            padding: 2rem 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            opacity: 0.95;
+        }
+
+        .last-updated {
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 8px;
+            display: inline-block;
+            font-weight: 500;
+        }
+
+        /* Welcome Box */
+        .welcome-box {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+            border-left: 4px solid var(--secondary-color);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+            font-size: 1.1rem;
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--bg-white);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            gap: 1.5rem;
+            overflow-x: auto;
+        }
+
+        .nav-link {
+            color: var(--text-light);
+            text-decoration: none;
+            white-space: nowrap;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            transition: all 0.2s;
+            font-weight: 500;
+        }
+
+        .nav-link:hover {
+            background: var(--bg-light);
+            color: var(--primary-color);
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+
+        .content-wrapper {
+            background: var(--bg-white);
+            border-radius: 12px;
+            padding: 3rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Typography */
+        h2 {
+            font-size: 2rem;
+            color: var(--text-dark);
+            margin-top: 3rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        h2:first-of-type {
+            margin-top: 0;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            color: var(--text-dark);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        h4 {
+            font-size: 1.2rem;
+            color: var(--text-dark);
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            color: var(--text-light);
+        }
+
+        /* Lists */
+        ul, ol {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+            color: var(--text-light);
+        }
+
+        strong {
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        /* Info Boxes */
+        .info-box {
+            background: var(--bg-light);
+            border-left: 4px solid var(--primary-color);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 6px;
+        }
+
+        /* Highlight Boxes */
+        .highlight {
+            background: #fef3c7;
+            border-left: 4px solid #f59e0b;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 6px;
+        }
+
+        .success-box {
+            background: #d1fae5;
+            border-left: 4px solid var(--success-color);
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 6px;
+        }
+
+        .danger-box {
+            background: #fee2e2;
+            border-left: 4px solid var(--danger-color);
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 6px;
+        }
+
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: var(--bg-white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        th, td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            background: var(--bg-light);
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        td {
+            color: var(--text-light);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:hover {
+            background: var(--bg-light);
+        }
+
+        /* Do's and Don'ts Grid */
+        .do-dont-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .do-card {
+            background: #d1fae5;
+            border: 2px solid var(--success-color);
+            padding: 1.5rem;
+            border-radius: 12px;
+        }
+
+        .dont-card {
+            background: #fee2e2;
+            border: 2px solid var(--danger-color);
+            padding: 1.5rem;
+            border-radius: 12px;
+        }
+
+        .do-card h4 {
+            color: #059669;
+            margin-top: 0;
+            font-size: 1.4rem;
+        }
+
+        .dont-card h4 {
+            color: #dc2626;
+            margin-top: 0;
+            font-size: 1.4rem;
+        }
+
+        .do-card li, .do-card p {
+            color: #065f46;
+        }
+
+        .dont-card li, .dont-card p {
+            color: #991b1b;
+        }
+
+        /* Checklist */
+        .checklist {
+            list-style: none;
+            margin-left: 0;
+            padding: 0;
+        }
+
+        .checklist li {
+            padding: 0.75rem 0.75rem 0.75rem 2.5rem;
+            position: relative;
+            background: var(--bg-light);
+            margin-bottom: 0.5rem;
+            border-radius: 6px;
+        }
+
+        .checklist li::before {
+            content: "☐";
+            position: absolute;
+            left: 0.75rem;
+            font-size: 1.2rem;
+        }
+
+        /* Emoji Icons */
+        .emoji-icon {
+            font-size: 1.5rem;
+            margin-right: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-dark);
+            color: white;
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.2s;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+        }
+
+        .footer-note {
+            font-size: 0.9rem;
+            opacity: 0.7;
+            margin-top: 1rem;
+            font-style: italic;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .content-wrapper {
+                padding: 1.5rem;
+            }
+
+            .nav-content {
+                padding: 0.75rem 1rem;
+            }
+
+            .do-dont-grid {
+                grid-template-columns: 1fr;
+            }
+
+            table {
+                font-size: 0.9rem;
+            }
+
+            th, td {
+                padding: 0.75rem 0.5rem;
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            nav, footer {
+                display: none;
+            }
+
+            .content-wrapper {
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>🎵 NextWave Music Sim</h1>
+            <p class="subtitle">Player Rules & Guidelines</p>
+            <div class="last-updated">Last Updated: December 2024</div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="nav-content">
+            <a href="#general" class="nav-link">General Rules</a>
+            <a href="#charts" class="nav-link">Chart Rules</a>
+            <a href="#multiplayer" class="nav-link">Multiplayer</a>
+            <a href="#economy" class="nav-link">Economy</a>
+            <a href="#competition" class="nav-link">Competition</a>
+            <a href="#enforcement" class="nav-link">Enforcement</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="content-wrapper">
+            
+            <div class="welcome-box">
+                <strong>Welcome to NextWave!</strong> These rules exist to ensure a fair, fun, and competitive experience for all players. Violating these rules may result in penalties, bans, or account termination.
+            </div>
+
+            <!-- General Gameplay Rules -->
+            <section id="general">
+                <h2><span class="emoji-icon">🎮</span> General Gameplay Rules</h2>
+
+                <h3>1. One Account Per Player</h3>
+                <ul>
+                    <li><strong>One account only.</strong> Multi-accounting is strictly prohibited.</li>
+                    <li>Creating alt accounts to farm resources, manipulate charts, or boost your main account will result in permanent bans for all associated accounts.</li>
+                    <li>If you need to switch accounts, contact an admin first.</li>
+                </ul>
+
+                <h3>2. No Exploiting Bugs or Glitches</h3>
+                <ul>
+                    <li>If you discover a bug, <strong>report it immediately</strong> to the admins.</li>
+                    <li>Exploiting bugs for personal gain (money duplication, stream inflation, etc.) is a bannable offense.</li>
+                    <li>Knowingly benefiting from a bug without reporting it is also considered exploitation.</li>
+                </ul>
+
+                <h3>3. Fair Play</h3>
+                <ul>
+                    <li>Play the game as intended. Use the features provided within the app.</li>
+                    <li>Automated scripts, bots, or third-party tools to play the game are prohibited.</li>
+                    <li>Any attempt to modify game data, reverse-engineer the app, or access backend systems is strictly forbidden.</li>
+                </ul>
+            </section>
+
+            <!-- Chart & Stream Rules -->
+            <section id="charts">
+                <h2><span class="emoji-icon">📊</span> Chart & Stream Rules</h2>
+
+                <h3>4. No Stream Farming</h3>
+                <ul>
+                    <li>Releasing excessive songs solely to inflate stream counts is considered <strong>stream farming</strong>.</li>
+                    <li>The game has anti-farming systems that will:
+                        <ul>
+                            <li>Apply diminishing returns to songs released in quick succession</li>
+                            <li>Limit the number of actively charting songs</li>
+                            <li>Cannibalize streams from your own overlapping releases</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h3>5. Chart Manipulation Prohibited</h3>
+                <ul>
+                    <li>Do not coordinate with other players to artificially boost chart positions.</li>
+                    <li>"Streaming parties" where groups target specific songs to manipulate rankings are not allowed.</li>
+                    <li>Let the simulation run naturally - your success should come from smart gameplay, not manipulation.</li>
+                </ul>
+
+                <h3>6. Authentic Releases</h3>
+                <ul>
+                    <li>Songs should represent genuine effort in the game (recording, production, features).</li>
+                    <li>Mass-releasing low-effort songs to game the system will trigger anti-farming penalties.</li>
+                </ul>
+            </section>
+
+            <!-- Multiplayer Conduct -->
+            <section id="multiplayer">
+                <h2><span class="emoji-icon">🤝</span> Multiplayer Conduct</h2>
+
+                <h3>7. Respectful Communication</h3>
+                <ul>
+                    <li>Treat all players with respect in any in-game messaging or social features.</li>
+                    <li><strong>No harassment, hate speech, discrimination, or bullying</strong> of any kind.</li>
+                    <li>Keep conversations appropriate for all ages.</li>
+                </ul>
+
+                <h3>8. Beef & Rivalry Rules</h3>
+                <ul>
+                    <li>In-game beefs are meant to be <strong>fun competitive features</strong>, not personal attacks.</li>
+                    <li>Keep beef lyrics creative and game-focused - no real-world insults or personal attacks.</li>
+                    <li>Excessive targeting of a single player may be considered harassment.</li>
+                </ul>
+
+                <h3>9. Collaboration Ethics</h3>
+                <ul>
+                    <li>Honor collaboration agreements made with other players.</li>
+                    <li>Don't ghost collaborators or intentionally sabotage joint projects.</li>
+                    <li>Revenue splits should be agreed upon before releasing collaborative work.</li>
+                </ul>
+
+                <h3>10. Label Conduct (For Label Owners)</h3>
+                <ul>
+                    <li>Treat signed artists fairly per your contract terms.</li>
+                    <li>Don't poach artists through manipulation or false promises.</li>
+                    <li>Label disputes should be handled through in-game renegotiation systems.</li>
+                </ul>
+            </section>
+
+            <!-- Economy & Trading Rules -->
+            <section id="economy">
+                <h2><span class="emoji-icon">💰</span> Economy & Trading Rules</h2>
+
+                <h3>11. No Real-Money Trading (RMT)</h3>
+                <div class="danger-box">
+                    <p><strong>Selling or buying in-game currency, items, or accounts for real money is strictly prohibited.</strong></p>
+                    <p style="margin-bottom: 0;">This includes trading game resources for goods/services outside the game.</p>
+                </div>
+
+                <h3>12. Fair Marketplace Use</h3>
+                <ul>
+                    <li>Don't manipulate the WakandaZon marketplace with fake listings or price manipulation.</li>
+                    <li>Honor purchases and sales made through the marketplace.</li>
+                </ul>
+
+                <h3>13. KazzApp Transfers</h3>
+                <ul>
+                    <li>Only send money to players you know and trust.</li>
+                    <li>Don't use KazzApp for money laundering between alt accounts.</li>
+                    <li>Scamming other players through fake deals is a bannable offense.</li>
+                </ul>
+            </section>
+
+            <!-- Competition Rules -->
+            <section id="competition">
+                <h2><span class="emoji-icon">🏆</span> Competition Rules</h2>
+
+                <h3>14. Award Show Integrity</h3>
+                <ul>
+                    <li>Vote fairly in award shows - don't create voting rings.</li>
+                    <li>Bribing or coercing other players for votes is prohibited.</li>
+                    <li>Celebrate wins graciously and accept losses with good sportsmanship.</li>
+                </ul>
+
+                <h3>15. Leaderboard Honesty</h3>
+                <ul>
+                    <li>Your position on leaderboards should reflect genuine gameplay.</li>
+                    <li>Any attempt to inflate your stats artificially will result in stat corrections and potential bans.</li>
+                </ul>
+
+                <h3>16. Concert & Tour Fair Play</h3>
+                <ul>
+                    <li>Book venues and tours based on your genuine fanbase.</li>
+                    <li>Don't exploit booking systems to block other players from venues.</li>
+                </ul>
+            </section>
+
+            <!-- Zero Tolerance Policies -->
+            <section id="zero-tolerance">
+                <h2><span class="emoji-icon">🚫</span> Zero Tolerance Policies</h2>
+
+                <p>The following will result in <strong>immediate permanent bans</strong>:</p>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Offense</th>
+                            <th>Consequence</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Multi-accounting</td>
+                            <td>All accounts permanently banned</td>
+                        </tr>
+                        <tr>
+                            <td>RMT (real money trading)</td>
+                            <td>Permanent ban + potential legal action</td>
+                        </tr>
+                        <tr>
+                            <td>Cheating/Hacking</td>
+                            <td>Permanent ban, stats wiped</td>
+                        </tr>
+                        <tr>
+                            <td>Severe harassment</td>
+                            <td>Immediate permanent ban</td>
+                        </tr>
+                        <tr>
+                            <td>Exploiting critical bugs</td>
+                            <td>Permanent ban + stat rollback</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Enforcement & Appeals -->
+            <section id="enforcement">
+                <h2><span class="emoji-icon">⚖️</span> Enforcement & Appeals</h2>
+
+                <h3>Penalty Tiers</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tier</th>
+                            <th>Violation Type</th>
+                            <th>Consequence</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Warning</strong></td>
+                            <td>First minor offense</td>
+                            <td>Verbal warning, no penalty</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Tier 1</strong></td>
+                            <td>Minor violations</td>
+                            <td>24-hour restrictions</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Tier 2</strong></td>
+                            <td>Repeated minor / Moderate violations</td>
+                            <td>7-day ban</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Tier 3</strong></td>
+                            <td>Serious violations</td>
+                            <td>30-day ban + stat corrections</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Permanent</strong></td>
+                            <td>Critical violations</td>
+                            <td>Account termination</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Appeals Process</h3>
+                <ol>
+                    <li>If you believe you were wrongly penalized, contact admins through the official channels.</li>
+                    <li>Provide your player ID and a clear explanation of the situation.</li>
+                    <li>Appeals are reviewed within 48-72 hours.</li>
+                    <li>Admin decisions on appeals are final.</li>
+                </ol>
+            </section>
+
+            <!-- Terms of Fair Play Agreement -->
+            <section id="agreement">
+                <h2><span class="emoji-icon">📜</span> Terms of Fair Play Agreement</h2>
+
+                <p>By playing NextWave Music Sim, you agree to:</p>
+
+                <ul class="checklist">
+                    <li>Follow all rules outlined in this document</li>
+                    <li>Report bugs and exploits when discovered</li>
+                    <li>Treat fellow players with respect</li>
+                    <li>Accept admin decisions regarding rule enforcement</li>
+                    <li>Play fairly and let your skills determine your success</li>
+                </ul>
+            </section>
+
+            <!-- Spirit of the Game -->
+            <section id="spirit">
+                <h2><span class="emoji-icon">🎵</span> The Spirit of the Game</h2>
+
+                <p>NextWave is about <strong>building your music career</strong> through strategy, creativity, and healthy competition.</p>
+
+                <div class="do-dont-grid">
+                    <div class="do-card">
+                        <h4>✅ DO</h4>
+                        <ul>
+                            <li>Release quality songs and build genuine fanbases</li>
+                            <li>Collaborate with other artists authentically</li>
+                            <li>Compete fiercely but fairly on the charts</li>
+                            <li>Build your label empire through good management</li>
+                            <li>Engage in fun beefs and rivalries</li>
+                            <li>Help new players learn the ropes</li>
+                        </ul>
+                    </div>
+
+                    <div class="dont-card">
+                        <h4>❌ DON'T</h4>
+                        <ul>
+                            <li>Try to cheat your way to the top</li>
+                            <li>Ruin the experience for other players</li>
+                            <li>Take in-game competition personally</li>
+                            <li>Exploit bugs or loopholes</li>
+                            <li>Harass or bully other players</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="../privacy-policy-site/">Privacy Policy</a>
+                <a href="../terms-of-service-site/">Terms of Service</a>
+                <a href="../data-deletion-site/">Account Deletion</a>
+                <a href="https://discord.gg/2weVx8HZ6" target="_blank">Discord</a>
+            </div>
+            <p>© 2024 NextWave Music Sim. All rights reserved.</p>
+            <p class="footer-note">These rules may be updated at any time. Continued play after updates constitutes acceptance of new rules.</p>
+        </div>
+    </footer>
+</body>
+</html>
